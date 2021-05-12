@@ -49,3 +49,4 @@ const title = styled("div")`
 console.log(title);
 // 그리고 그것을 el.style, 즉 div의 style 로 지정한다 그리고 이렇게 style 첨가된
 // el을 다시 return 하게 된다 이러면 콘솔창에 style 첨가된 div태그가 표현된다
+// 이렇게 함수의 함수를 만들 수 있다 이거는 JS로 html과 css를 한꺼번에 조작할 수 있게 해주는듯
