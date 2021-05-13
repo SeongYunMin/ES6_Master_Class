@@ -65,7 +65,7 @@ wrapper3.innerHTML = list;
 // 그러기 위해선 split의 반대인 join()이라는 메소드를 알아야한다
 // join()은 괄호안의 string으로 array의 엘레먼트를 하나의 string으로 묵는다
 console.log(friends);
-const joined = friends.join("😊");
+const joined = friends.join("");
 console.log(joined);
 // 이렇게 묶어준다
 // 위에서 let으로 선언한 list의 콤마를 제거해보자

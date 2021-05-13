@@ -1,7 +1,7 @@
 // JS로 CSS와 html을 동시에 조작해보자!
-const styled1 = (css) => console.log(css);
+const styleddd = (css) => console.log(css);
 
-styled1`border-radius:10px;
+styleddd`border-radius:10px;
 color: blue;
 `;
 // 흠 styled라는 함수 만들었는데 저런식으로 백택으로 된 인자를
@@ -21,8 +21,8 @@ color: blue;
 // color: blue;
 // `;
 // console.log(title);
-// 아래의 작동하는 코드를 위해 주석 처리했다
-// 이렇게 무작정 styled("div")옆에 백택으로 알규먼트 만든다고 이게 실행되지 않는다
+//  위 코드는 아래의 작동하는 코드를 위해 주석 처리했다
+// 이렇게 무작정 styled("div")추픅에 백택으로 알규먼트 만든다고 이게 실행되지 않는다
 // 왜냐면 JS는 위와 같이 짜게 되면 백택 앞부분의 styled("div") 자체를 함수라고
 // 생각해서 styled("div") 함수가 정의되어 있는지 확인하기 때문
 // 그런 함수는 없으므로 콘솔창에 styled() is not a function 이라는 문구를 띄우게 된다
@@ -33,14 +33,14 @@ const wrapper5 = document.querySelector(".wrapper5");
 
 const styled = (aElement) => {
   const el = document.createElement(aElement);
-  return (args) => {
-    const style = args[0];
+  return (potato) => {
+    const style = potato[0];
     el.style = style;
     return el;
   };
 };
-// 이렇게 하면 styled함수는 styled(aElement)라는 함수를 return 하게 되고
-// 이 styled(aElement) 함수는 args 라는 알규먼트를 인자로 가진다 그 알규먼트가
+// 이렇게 하면 styled함수는 styled(aElement)()라는 함수를 return 하게 되고
+// 이 styled(aElement)() 함수는 potato 라는 알규먼트를 인자로 가진다 그 알규먼트가
 // 아래 백택으로 표현한 css 스타일시트이고 이 어래이인 알규먼트의 엘레먼트는
 // string 하나인데 그것을 style에 저장한다(아래 주석에서 계속)
 const title = styled("div")`
