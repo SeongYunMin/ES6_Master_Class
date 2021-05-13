@@ -18,8 +18,8 @@ console.log(buttons);
 Array.from(buttons).forEach((item) => {
   item.addEventListener("click", () => console.log("clicked!"));
 });
-// 이렇게 array-like-object또한 어레이로 바꿔서 가각에 함수를 먹일 수 있다!
-// array.from은 정말 유용한 장치이다
+// 이렇게 array-like-object또한 어레이로 바꿔서 각각에 함수를 먹일 수 있다!
+// Array.from은 정말 유용한 장치이다
 
 // Array.find()에 대해서 알아보자
 // 이거는 그냥 어래이 내에서 원하는 조건 맞는 첫번째엘레먼트 찾아내는 메서드이다
