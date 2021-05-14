@@ -1,6 +1,6 @@
-// destructuring은 오브젝트나 어레이 안의 변수를 바깥으로
-// 끄집어내서 사용할 수 잇도록 하는 것이다
-
+// destructuring은 오브젝트나 어레이 안의 엘레먼트를 바깥으로
+// 끄집어내서 변수로 사용할 수 잇도록 하는 것이다
+// 일단 오브젝트 디스트럭쳐링부터 해보자
 const settings = {
   notifications: {
     follow: true,
@@ -21,11 +21,11 @@ if (settings.notifications.follow === true) {
   // send email
 }
 // 이런식으로 했다 좀 별로의 방법이다 일단 settings.notifications.follow 너무길고
-// notifications 같은 객체가 선언이 안돼있을 수도 있다
+// notifications 같은 객체가 선언이 안돼있는 경우 반영 못한다
 // 그래서 destructuring을 하는 것 일단 변수 하나 선언하자
 // 근데 우리가 얻고자 하는 값은 settings.notifications.follow
 // 랑 color 오브젝트이다
-// 아래처럼 변수를 선언하면 정확히 오브젝트 안의 follow에 접근할 수 있다
+// 아래처럼 변수를 선언하면 정확히 오브젝트 안의 follow 엘레먼트에 접근할 수 있다
 // 아래에서 선언한 변수가 뭐냐고? 토마토 색깔이 변수 이다
 // 찾고자하는 값이 있는 오브젝트의 형태를 그대로 본따서 변수를 선언하는 것이다
 // 왜 destructuring이냐면 생긴게 일단 오브젝트 structure하는 것의
@@ -68,3 +68,7 @@ console.log(yesalerts);
 // 저장이 된다
 // 이렇게 한줄로 끝내는 것을 one-line-statement라고 한다
 // 이렇게 하는게 if(denotifications === {}) 이렇게 하는 것보다 훨씬 간단하고 이해 빠르다
+
+// array destructuring 에 대해 배워보지
+// 얘는 api로부터 받은 데이터를 바꾸지 않고 변수에 저장할때 필요하긴한데
+// 오브젝트 디스트럭쳐링을 더 많이 쓸것이다
