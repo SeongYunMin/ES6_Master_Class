@@ -53,7 +53,7 @@ const {
   notifications: { unalerts = "potato" }
 } = settings;
 console.log(unalerts);
-// 이 destructuring의 좋은 점은 바로 오브젝트 안에 없는 거를 선언했을때
+// 이 destructuring의 좋은 점은 바로 오브젝트 안에 없는 엘레먼트를 선언했을때
 // 대처가 가능하다는 것이다. 위처럼 코드 작성하게 되면 JS는 일단
 // notifications 객체 안에서 unalerts라는 엘레먼트를 찾고 만약 없다면 디폴트값
 // 으로 potato를 저장한다
@@ -70,5 +70,41 @@ console.log(yesalerts);
 // 이렇게 하는게 if(denotifications === {}) 이렇게 하는 것보다 훨씬 간단하고 이해 빠르다
 
 // array destructuring 에 대해 배워보지
+// array destructuring은 가져온 정보를 조작하지 않을때 사용하는듯
 // 얘는 api로부터 받은 데이터를 바꾸지 않고 변수에 저장할때 필요하긴한데
 // 오브젝트 디스트럭쳐링을 더 많이 쓸것이다
+// 일단 기존에는 어레이 안의 엘레먼트 가져오기 위해 아래와 같은 방법을 썼다 
+const days = ["Mon","Tue","Wed","Thr","Fri","Sat","Sun"];
+const monday = days[0];
+const tuesday = days[1];
+console.log(monday,tuesday);
+// 이 방법은 너무 귀찮고 줄 많이 차지한다
+// 오브젝트는 위를 예로들면 settings안에 notifications있고 그안에 alerts가 있다
+// 즉, 타고 들어갈 수 있는 루트가 있었다는 것
+// 하지만 어레이는 그런게 없네?
+// 어레이에서는 그냥 순서대로 변수가 저장이 된다
+// 초기값 설정도 오브젝트에서 했던거랑 동일하게 하면 된다
+// 어레이 디스트럭쳐링에서는 변수명을 어레이의 엘레먼트와 일치시킬 필요없다
+// 순서로다가 엘레먼트를 특정하기 때문
+const [mon,tue,wed,thr,fir="Wrong variable"] = days;
+console.log(mon,tue,wed,thr,fir);
+// 또한 이 디스트럭쳐링은 어레이나 오브젝트를 return 하는 함수에 대해서도 사용가능하다
+const dayss = () => ["Mon","Tue","Wed","Thr","Fri","Sat","Sun"];
+const [mons,tues,weds,thrs,fris] = dayss();
+
+const object = () => ({
+    notifications: {
+      follows: true,
+      alertss: true,
+      unfollows: false
+    },
+    colors: {
+      themes: "dark"
+    }
+});
+const {
+  notifications: {follows},
+  colors
+} = object();
+console.log(follows,colors);
+// 이런식으로 오브젝트를 반환하는 함수또한  디스트럭쳐링으로 변수선언 쌉가능
