@@ -3,7 +3,7 @@ function saveSettings(settings) {
   console.log(settings);
   console.log(settings.follow);
 }
-// 함수를 만들때 아규먼트가 너무 많아질것 같으면 그냥
+// 함수를 만들때 인자가 너무 많아질것 같으면 그냥
 // 함수를 쓸때 인자 자리에 오브젝트를 넣어버려라 그래야 코드 해석
 // 편안하다
 saveSettings({
@@ -46,8 +46,8 @@ saveSetting({
 // 이건 전에 함 배웠던 건데 만약에 오브젝트 내의 키의 이름과 대입하는 값의 이름이
 // 같다면 이를 단축해서 쓸 수 있게 하는 것이다
 
-const follow = follow();
-const alert = alert();
+// const follow = follow();
+// const alert = alert();
 
 // const settingss={
 //     notifications: {
@@ -55,10 +55,31 @@ const alert = alert();
 //         alert: alert
 //     }
 // }
-// 이렇게 키랑 값이랑 이름 같을때는 축약이 가능하다
-const settingss = {
-  notifications: {
-    follow,
-    alert
-  }
-};
+// 이렇게 키랑 값이랑 이름 같을때는 아래처럼 축약이 가능하다
+// const settingss = {
+//   notifications: {
+//     follow,
+//     alert
+//   }
+// };
+
+// variable swapping에 대해 배워보자
+// 배리어블 스와핑은 말 그대로 변수끼리 값을 바꾸는 테크닉을 의미한다
+// array destructuring을 사용해서 쉽게 할 수 있다
+// 아래 변수들은 값을 바꿀 예정이어서 let을 사용했다
+let mon = "Sat";
+let sat = "Mon";
+console.log(mon, sat);
+[sat, mon] = [mon, sat];
+// 이런식으로 디스트럭쳐링을 해서 변수 값 스와핑 가능하다
+// mon의 값이 sat에 들어가고 sat의 값이 mon에 들어간다
+// 여기서 우측은 어레이를 선언함과 동시에 사용하기 위해 이렇게 짰다
+console.log(mon, sat);
+
+// variable skipping에 대해 알아보자
+// 얘는 변수를 생략하고 싶을 때 사용하는 테크닉이다
+const days = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
+const [, , , thr, , satt, sun] = days;
+// 나는 days어레이에서 Thr 이랑 Sat, Sun만 얻고 싶다 그럴때는 필요하지 않은
+// 부분은 그냥 , 콤마만 하고 변수 선언을 안함을 통해 생략할 수 있다
+console.log(thr, satt, sun);
