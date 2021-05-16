@@ -73,38 +73,80 @@ console.log(yesalerts);
 // array destructuring은 가져온 정보를 조작하지 않을때 사용하는듯
 // 얘는 api로부터 받은 데이터를 바꾸지 않고 변수에 저장할때 필요하긴한데
 // 오브젝트 디스트럭쳐링을 더 많이 쓸것이다
-// 일단 기존에는 어레이 안의 엘레먼트 가져오기 위해 아래와 같은 방법을 썼다 
-const days = ["Mon","Tue","Wed","Thr","Fri","Sat","Sun"];
+// 일단 기존에는 어레이 안의 엘레먼트 가져오기 위해 아래와 같은 방법을 썼다
+const days = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
 const monday = days[0];
 const tuesday = days[1];
-console.log(monday,tuesday);
+console.log(monday, tuesday);
 // 이 방법은 너무 귀찮고 줄 많이 차지한다
-// 오브젝트는 위를 예로들면 settings안에 notifications있고 그안에 alerts가 있다
+// 근데 오브젝트는 위를 예로들면 settings안에 notifications있고 그안에 alerts가 있다
 // 즉, 타고 들어갈 수 있는 루트가 있었다는 것
 // 하지만 어레이는 그런게 없네?
 // 어레이에서는 그냥 순서대로 변수가 저장이 된다
 // 초기값 설정도 오브젝트에서 했던거랑 동일하게 하면 된다
 // 어레이 디스트럭쳐링에서는 변수명을 어레이의 엘레먼트와 일치시킬 필요없다
 // 순서로다가 엘레먼트를 특정하기 때문
-const [mon,tue,wed,thr,fir="Wrong variable"] = days;
-console.log(mon,tue,wed,thr,fir);
+const [mon, tue, wed, thr, fir = "Wrong variable"] = days;
+console.log(mon, tue, wed, thr, fir);
 // 또한 이 디스트럭쳐링은 어레이나 오브젝트를 return 하는 함수에 대해서도 사용가능하다
-const dayss = () => ["Mon","Tue","Wed","Thr","Fri","Sat","Sun"];
-const [mons,tues,weds,thrs,fris] = dayss();
+const dayss = () => ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
+const [mons, tues, weds, thrs, fris] = dayss();
 
 const object = () => ({
-    notifications: {
-      follows: true,
-      alertss: true,
-      unfollows: false
-    },
-    colors: {
-      themes: "dark"
-    }
+  notifications: {
+    follows: true,
+    alertss: true,
+    unfollows: false
+  },
+  colors: {
+    themes: "dark"
+  }
 });
 const {
-  notifications: {follows},
+  notifications: { alertss },
   colors
 } = object();
-console.log(follows,colors);
+console.log(alertss, colors);
 // 이런식으로 오브젝트를 반환하는 함수또한  디스트럭쳐링으로 변수선언 쌉가능
+
+//인제 renaming에 대해 알아보자
+// 이것은 오브젝트 내의 엘레먼트의 이름을 바꾸고 싶을때 쓰는 방법이다
+const settingss = {
+  color: {
+    chosen_color: "dark"
+  }
+};
+const {
+  color: { chosen_color: chosenColor = "light" }
+} = settingss;
+console.log(chosenColor);
+// 위 light는 디폴트값 지정해준것
+// 여기서 chosen_color를 chosenColor로 바꾸겠다
+// 위처럼 chosen_color옆에 : chosenColor 를 첨가해줬다
+// 이 이 코드는 settingss 안의 color 안의 chosen_color를 찾고 그 엘레먼트의 값을
+// chosen_color가 아닌 chpsenColor라는 변수에다가 저장하라는 뜻
+// 그리고 만약 chosen_color이 없을시에는 "light"를 chosenColor에 저장하라는 의미이다
+// 기존에는 이렇게 했다
+// const chosenColor = settingss.color.chosen_color || "light";
+// console.log(chosenColor);
+// ||를 써서 만약에 chosen_color 없을시에도 디폴트로 "light" 저장되게했다
+// 이렇게 하는것은 별로다
+const {
+  color: { chosen_color: chosenColor2 = "light" }
+} = settingss;
+console.log(chosenColor2);
+
+let chosenColor3 = "blue";
+console.log(chosenColor3);
+// 만약에 let으로 chosenColor3에 blue를 저장한 상태에서 이
+// chosenColor3의 값에 settingss 안에 있는 chosen_color의 값을 넣고 싶다면 어떻게 할까?
+// 바로바로 아래처럼 destruturing 코드를 소괄호 ()로 묶어주면 된다
+// 이때는 위에서 let으로 선언한 chosenColor3에 다른 값을 업데이트하는 것이므로
+// 중괄호 앞에 const나 let을 쓰지 않고 그냥 전체를 ()로 묶으면 된다
+// 이렇게 하면 let으로 이미 선언한 변수를 settings안의 엘레먼트인 chose_color의 값으로
+// 대체할 수 있다 즉 let 변수를 업데이트할때 아주 좋은 방법이다
+({
+  color: { chosen_color: chosenColor3 = "light" }
+} = settingss);
+
+console.log(chosenColor3);
