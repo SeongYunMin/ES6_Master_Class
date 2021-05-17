@@ -71,10 +71,10 @@ let mon = "Sat";
 let sat = "Mon";
 console.log(mon, sat);
 [sat, mon] = [mon, sat];
+console.log(mon, sat);
 // 이런식으로 디스트럭쳐링을 해서 변수 값 스와핑 가능하다
 // mon의 값이 sat에 들어가고 sat의 값이 mon에 들어간다
 // 여기서 우측은 어레이를 선언함과 동시에 사용하기 위해 이렇게 짰다
-console.log(mon, sat);
 
 // variable skipping에 대해 알아보자
 // 얘는 변수를 생략하고 싶을 때 사용하는 테크닉이다

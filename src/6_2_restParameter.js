@@ -12,7 +12,7 @@ infiniteArgs("asd", "adsad", 1231, "qwer", "wqwqw", "Seongyun", 888, "안녕");
 // 출력값 보면 이해 될것
 
 // rest는 모든 value를 하나의 variable로 축소(contract)시켜주는 역할을 한다
-// 즉 ...kimchi의 뜻은 함수에 어떤 인자들이 들어오든 전부다 kimchi라는 알규먼트에
+// 즉 ...kimchi의 뜻은 함수에 어떤 인자들이 들어오든 전부다 kimchi라는 어레이에
 // 넣을거야라는 의미이다 즉 그 인자들을 가지고 array를 만들게 된다
 // 아래 예시를 보자
 const bestFriendMaker = (firstOne, ...rest) => {

@@ -20,7 +20,9 @@ const hello = {
   sexy: true,
   hello: "hello"
 };
+console.log({ ...sexy });
 console.log({ ...sexy, ...hello });
+// 오브젝트 를 spread할떄는 ...sexy만 하면 안되고 중괄호를 꼭 씌워줘야 한다
 // 이렇게 하면 쉽게 합체 가능하다 한개의 오브젝트에 2개 다 들어갔다
 
 // 인제 뭔가를 add하거나 merge하거나 update하는 법을 배울 것이다
@@ -59,10 +61,10 @@ const user = {
 console.log(user);
 // ... spread를 사용하여 이 문제점을 해결해보자
 const lastNames = prompt("Last Name2");
-users = {
+const users = {
   username: "a",
   age: 24,
-  ...(lastNames !== "" && { lastname: lastNames })
+  ...(lastNames !== "" && { lastname: lastName })
   //   이렇게 하면 &&기준으로 왼쪽 오른쪽이 true일
   // 이 코드는 조금 낯설 수 있는데 이렇게 이해하면 된다
   // 우선 &&는 좌측과 우측이 모두 true여야지만 true를 반환한다 즉 괄호 안이 실행이된다
@@ -75,5 +77,6 @@ users = {
   // 생성 안되고 저 조건이 true이면 lastname: lastName 이 출력되어 user오브젝트에 key로
   // 추가된다
   //   이렇게 conditional object를 만들 수 있다
+  // conditional "array"의 경우는 tertiary operator 사용해서 하는게 좋을듯
 };
 console.log(users);

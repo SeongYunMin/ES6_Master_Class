@@ -19,6 +19,8 @@ console.log(cleanUser);
 // 타라~ 이렇게 하면 password를 깔끔하게 제거 거능하다
 // passwod와 ...rest를 받아서 rest만 return 했다
 // destructuring과 rest를 함께 쓰면 정말 유용하다
+// rest parameter는 인자가 array형태면 인자들을 모을때 어래이로 모으고
+// 오브젝트 형태면 인자들을 오브젝트에 모으게 된다
 
 // destructuring의 디폴트 값 설정법을 활용해 오브젝트에 country엘레먼트를 추가해보자
 let setCountry = ({ country = "KR", ...rest }) => ({ country, ...rest });
