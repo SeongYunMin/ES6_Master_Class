@@ -22,7 +22,7 @@ console.log(amIHot);
 // 끝내기 위해서는 resolve 함수를 써야한다
 // resolve를 통해 이 promise는 끝나고 너는 값을 얻게 된다
 // Promise의 인자는 무조건 첫번째가 resolve 자리이고 두번쨰가 reject자리이다
-// 이 각각의 인자는 함수이다 따라서 인자가 executor내에서 resolve함수로 쓰인것
+// 이 각각의 인자는 내장함수이다 따라서 인자가 executor내에서 resolve함수로 쓰인것
 // 따라서 아래처럼 인자 이름 res로 했으면 resolve함수도 res라는 이름으로 선언된 것이므로
 // res()써야한다
 const amISexy = new Promise((res, rej) => {
