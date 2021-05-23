@@ -15,6 +15,7 @@ console.log(friendss);
 // 이걸 써서 이 button들이 눌릴때마다 콘솔창에 출력이되는 장치 만들어보자
 const buttons = document.querySelectorAll("button");
 console.log(buttons);
+console.log(Array.from(buttons));
 Array.from(buttons).forEach((item) => {
   item.addEventListener("click", () => console.log("clicked!"));
 });
@@ -45,7 +46,7 @@ const check = () => friends.findIndex((friend) => friend.includes("@gorea.com"))
 let index = check();
 if (index !== -1) {
   console.log(index);
-  const username = friends[where].split("@")[0];
+  const username = friends[check()].split("@")[0];
   const email = "korea.com";
   friends[index] = `${username}@${email}`;
   index = check();
@@ -62,5 +63,6 @@ console.log(friends);
 // requirements는 fill(바꾸고싶은_value, 시작_index, 끝_index)
 // 위에서 쓴 코드에 이어서 작성하도록 하겠다
 friends.fill("😊".repeat(3), 2);
+// 이렇게 requirements 2개 넣을 경우 후위는 그냥 fill을 시작할 index를 의미하게 된다
 console.log(friends);
 // 이렇게 2번 index부터 끝까지 다 이모지로 바꿨다

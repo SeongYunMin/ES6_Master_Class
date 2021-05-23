@@ -47,7 +47,7 @@ if (follow === true) {
 // es6에서는 오브젝트 안의 값을 specific하게 얻고 싶을때 이렇게 오브젝트 선언을 거꾸로
 // 한 것 같은 destructuring을 하면 된다
 // 근데 이때 주의할 점은 무조건 변수명이 우리가 얻고자 하는 값을 담은 key 또는 오브젝트와
-// 같아야 한다는 것!!
+// 같아야 한다는 것!!(오브젝트 디스트럭쳐링만 해당)
 // 이렇게 변수 선언하면 기존처럼 settings.notifications.follow이런 긴 것 안써도 된다
 const {
   notifications: { unalerts = "potato" }

@@ -4,11 +4,12 @@ const styleddd = (css) => console.log(css);
 styleddd`border-radius:10px;
 color: blue;
 `;
-// 흠 styled라는 함수 만들었는데 저런식으로 백택으로 된 인자를
-// ()안에 넣지 않고 그냥 styled 옆에 써버리면 어떻게 될까?
+// 흠 styleddd라는 함수 만들었는데 저런식으로 백택으로 된 인자를
+// ()안에 넣지 않고 그냥 styleddd 옆에 써버리면 어떻게 될까?
 // 이러면 이 ``으로 된 인자는 알규먼트가 된다
 // 알규먼트는 어레이 형태로 함수에 전달되는 인자를 의미한다
 // 그래서 console.log 출력 값이 array이다
+// 근데 안에 엘레먼트는 백택 안에 있는 내용 전체가 하나로 묶이게 된다
 // 즉 template literal 만으로도 함수의 호출이 가능하다는 뜻!
 
 // 그럼 이제 styled 함수를 좀 다르게 만들어서 css를 조작해보자 우선 아래의 에러나는 코드를 살펴보자
@@ -22,7 +23,7 @@ color: blue;
 // `;
 // console.log(title);
 //  위 코드는 아래의 작동하는 코드를 위해 주석 처리했다
-// 이렇게 무작정 styled("div")추픅에 백택으로 알규먼트 만든다고 이게 실행되지 않는다
+// 이렇게 무작정 styled("div")우측에 백택으로 알규먼트 만든다고 이게 실행되지 않는다
 // 왜냐면 JS는 위와 같이 짜게 되면 백택 앞부분의 styled("div") 자체를 함수라고
 // 생각해서 styled("div") 함수가 정의되어 있는지 확인하기 때문
 // 그런 함수는 없으므로 콘솔창에 styled() is not a function 이라는 문구를 띄우게 된다
@@ -72,12 +73,12 @@ console.log(isEmail("andy8809@naver.com"));
 
 // 2. string.repeat()
 const CC_NUMBER = "8809";
-const displayName=`${"*".repeat(10)}${CC_NUMBER}`;
+const displayName = `${"*".repeat(10)}${CC_NUMBER}`;
 console.log(displayName);
 // 이런식으로 스트링 뒤에 repeat(number) 메소드 쓰면 그만큼 반복 출력해준다
 
 // 3. string.startsWith()
-const namee = "Mr. Min"
+const namee = "Mr. Min";
 console.log(namee.startsWith("Mr"));
 // 이런식으로 string이 괄호 안의 string으로 시작하는지 여부를 파악한다
 // 같은 맥락으로 마지막 string을 검사하는 endsWith()도 있다

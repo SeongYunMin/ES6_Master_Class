@@ -79,12 +79,7 @@ console.log(profile);
 
 // 지금부터는 어래이에 적용할 수 있는 여러 메소드 들에대해 알아볼것이다
 // array.find()에 대해 알아보자
-const email = [
-  "andy@naver.com",
-  "lynn@gmail.com",
-  "priority@nate.com",
-  "qwer@hanmail.net"
-];
+const email = ["andy@naver.com", "lynn@gmail.com", "priority@nate.com", "qwer@hanmail.net"];
 // array.find() 는 괄호 안의조건을 만족하는 엘레멘트 중 첫번째 엘레먼트를 반환하는 함수이다
 // find 의 괄호 안에는 원하는 조건을 만족하는 엘레먼트만 return 하게 arrow function
 // 을 적용한다
@@ -98,7 +93,7 @@ console.log(foundGmail);
 
 // array.filter()에 대해 알아보자
 // filter 메소드는 ()안에 제공된 함수의 조건을 만족하는 모든 엘레먼트로
-// 새로운 엘레먼트를 만든다
+// 새로운 어레이를 만든다
 // gmail.com을 포함하지 않은 엘레먼트들만 filter해보자
 const removeGmail = email.filter((item) => !item.includes("gmail.com"));
 // 이렇게 filter 매소드 안에다가 조건을 넣어주면 되는데 이때 gmail.com을 포함하자
@@ -119,7 +114,7 @@ console.log(splitted);
 email.forEach((item) => {
   console.log(item.split("@")[0]);
 });
-
+// 근데 forEach는 함수를 각각 엘레먼트에 적용만 할뿐 결과를 어레이로 정리하진 못한다
 // 근데 이렇게 추려낸 username을 한 어래이에 저장하려면 어떻게 할까?
 // 아래처럼 해도 되긴 된다 근데 너무 코드 길어짐
 const cleaned = [];
