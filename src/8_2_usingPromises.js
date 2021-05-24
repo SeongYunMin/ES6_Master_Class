@@ -22,7 +22,7 @@ const amIHot = new Promise((res, rej) => {
 // 이렇게 rej함수를 쓴 후 출력해보면 uncaught이라는 에러와 함꼐 You are ugly 가 출력된다
 // 근데 이렇게 했더니만 "uncaught" 에러가 발생했다 우리가 이 에러를 잡지 못했다는뜻
 // 에러를 잡아줘야 한다
-// 이때 쓰는게 catch라는 메서드는 에러를 캐치해서 값을 돌려주는 역할을 한다
+// 이때 쓰는게 catch라는 메서드이다 얘는 에러를 캐치해서 값을 돌려주는 역할을 한다
 // 아래처럼 catch 메서드를 먹이면 에러발생시 catch안의 함수를 출력한다
 amIHot.then((result) => console.log(result)).catch((error) => console.log(error));
 // 이렇게 amIHot에대해 두가지 메서드를 사용했는데 이게 뭔뜻일까?

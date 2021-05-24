@@ -27,7 +27,7 @@ console.log({ ...sexy, ...hello });
 
 // 인제 뭔가를 add하거나 merge하거나 update하는 법을 배울 것이다
 const friendss = ["nico", "lynn"];
-const newFriendss = [...friends, "dall"];
+const newFriendss = [...friendss, "dall"];
 // 이렇게 기존에 있던 어레이를 다른 어레이에 add할 수 있다
 console.log(newFriendss);
 

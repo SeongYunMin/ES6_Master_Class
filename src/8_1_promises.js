@@ -38,7 +38,7 @@ setInterval(console.log, 1000, amISexy);
 // }, 1000);
 // 후 갑자기 빡센 코드 나왔다고 생각할 수 있는데 의외로 간단하다
 // 내가 한것은 setTimeout을 이용해 resolve 함수를 3초 뒤에 실행하도록 한것이다
-// 인제 promise 안에 resolve함수가 생겼다 따라서 이 promise는 resolve함수가 실행되면
+// 인제 promise 안에 resolve겼함수가 생다 따라서 이 promise는 resolve함수가 실행되면
 // 끝나고 값을 return 하게 된다 그래서 3초 전까진 pending 뜨다가 3초부터 Yes you are이
 // 출력이 된다 즉 3초 부터 promise가 resolved 됐다
 // 그리고 그것을 더 와닿게 보여주기 위해서 setInterval 써서 1초마다 amISexy출력 하도록

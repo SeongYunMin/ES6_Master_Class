@@ -33,10 +33,12 @@ friends.forEach((current, index, array) => {
 for (const friend of friends) {
   console.log(friend);
 }
+
 // 이렇게 매우 직관적으로 루프를 구성할 수 있다
 // 이 for of 루프의 나이스한 점은 우선 forEach에서 인자를 사용하는 것과는 다르게
 // const나 let 변수를 선언할 수 있다는 것이다 forEach에서는 안되는 것이다
-// 또한 string에서도 루프를 형성할 수 있다
+// 또한 string에서도 루프를 형성할 수 있다(for 0f 에서 선언한 const 변수는 전역 변수 아니므로
+// for문 안에서만 사용 가능!!)
 for (const letter of "Hello priorityMin") {
   console.log(letter);
 }
@@ -47,10 +49,10 @@ for (const letter of "Hello priorityMin") {
 // for 루프는 중간에 원하는 곳에서 루프를 멈추는 기능도 있다
 // 아래에서 나는 Mark 까지만 출력하고 루프를 멈추길 원한다 아래처럼 조건문 쓰면 됨
 friends = ["Nico", "Lynn", "ha", "qu", "Mark", "keke", "Mina"];
-for (const friendd of friends) {
-  if (friendd === "Mark") {
+for (const friend of friends) {
+  if (friend === "Mark") {
     break;
   } else {
-    console.log(friendd);
+    console.log(friend);
   }
 }
