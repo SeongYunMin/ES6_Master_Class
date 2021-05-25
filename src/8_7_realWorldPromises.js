@@ -24,5 +24,13 @@
 // 한 후 .json()함수를 통해 정보를 가져와보자
 
 fetch("https://yts.mx/api/v2/list_movies.json")
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+  .then((response) => {
+    console.log(response);
+    return response.json();
+  })
+  .then((json) => console.log(json))
+  .catch((e) => console.log(e));
+// 이렇게 api로부터 정보를 가져와서 콘솔창에다가 출력해봤다 오브젝트안에 영화 정보가
+// 들어있는 것을 볼 수 있다
+// response만 가져와서는 별로 정보를 얻을 수 없었다 json()를 통해 이 api의 바디를
+// 가져올 수 있었다
