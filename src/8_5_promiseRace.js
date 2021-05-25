@@ -1,7 +1,7 @@
 // Promise.race는 기본적으로 형태는 Promise.all 이랑 같지만 얘는
 // all과는 다르게 여러 promise들 중 한개라도 먼저 resolve되거나 reject되면
 // 다음 then, catch가 실행된다
-// 즉 마치 race를 하는 것처럼 p1,p2,p3 중 가장빠르게 실행되는 것
+// 즉 마치 race를 하는 것처럼 p1,p2,p3 중 가장 빨리 resolve나 reject되는게 실행되는 것
 const p1 = new Promise((resolve) => {
   setTimeout(resolve, 5000, "First");
 });

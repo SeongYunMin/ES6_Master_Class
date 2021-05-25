@@ -3,12 +3,12 @@
 // 구글닷컴은 사실 fetch할 수 없다 왜냐면 구글이 막아놨기 때문
 // 우리 라이브 서버를 fetch 해보자
 // 여기서 이 라이브 서버를 api라고 가정하고 생각해보자
-fetch("http://127.0.0.1:5500/8_7_realWorldPromises.html")
-  //.then((response) => console.log(response.text()))
-  .then((response) => console.log(response.text()))
-  .then((potato) => console.log(potato))
-  .catch((err) => console.log(`❌${err}`));
-// 위에는 추후 설명할 json이 있지만 response를 그냥 console.log 해보면
+// fetch("http://127.0.0.1:5500/8_7_realWorldPromises.html")
+//.then((response) => console.log(response.text()))
+// .then((response) => response.text())
+// .then((potato) => console.log(potato))
+// .catch((err) => console.log(`❌${err}`));
+// response를 그냥 console.log 해보면
 // 여러 상태를 알려주는 오브젝트가 콘솔창에 뜬다
 // 근데 respone.text() 콘솔창에 출력하면(7번행) promise가 pending중이라고 뜬다
 // 이제 할 것은 response를 text로 바꾼 걸 return하는 것이다
@@ -18,4 +18,11 @@ fetch("http://127.0.0.1:5500/8_7_realWorldPromises.html")
 // 또 then을 써야 한다는 것이다
 // 즉 7번행처럼 response.text() 를 바로 출력해봤자 pending만 뜨므로(response.tex()는 promise니까)
 // 위처럼 then을 써서 pending 끝난 후 return값을 console.log해줘야 한다
-// 이렇게 하면 document 전체를 콘솔창에 출력할 수 있다
+// 이렇게 하면 document 전체를 콘솔창에 출력할 수 있다ㅌ
+
+// 위 코드는 아래 쓸 json을 위해 주석 처리했다 인제 영화정보를 가져오는 api를 fetch
+// 한 후 .json()함수를 통해 정보를 가져와보자
+
+fetch("https://yts.mx/api/v2/list_movies.json")
+  .then((response) => response.json())
+  .then((json) => console.log(json));

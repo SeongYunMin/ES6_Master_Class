@@ -21,7 +21,7 @@ const p3 = new Promise((resolve) => {
 const motherPromise = Promise.all([p1, p2, p3]);
 motherPromise.then((values) => console.log(values));
 // 이런식으로 Promise.all에 array로 p1,p2,p3를 넣고 then으로
-// 출력했더니만 p1,p2,p3의 return 값들이 array에 담긴채로 각각이 resolve 다
+// 출력했더니만 p1,p2,p3의 return 값들이 array에 담긴채로 각각이 resolve 된다
 // 끝난뒤에 출력이 되는 것을 알 수 있다 즉 5초 뒤에 출력된다
 // 또한 promise.all의 좋은점은 p1,p2,p3가 resolve되는 순서대로 어레이에
 // 값을 넣는게 아니라 기존에 인자로 설정해둔 순서로 값이 저장된다는 것이다

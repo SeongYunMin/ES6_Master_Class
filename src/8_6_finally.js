@@ -12,6 +12,6 @@ const p1 = new Promise((resolve, rej) => {
   .catch((err) => console.log(err))
   .finally(() => console.log("I'm done"));
 // 이 finally는 then이 앞에 오든 catch가 오든 이어서 실행이된다
-// 즉, Promise가 resolve 되는 reject 되는 상관없이 이어서 실행된다는 뜻
+// 즉, Promise가 resolve 되든 reject 되든 상관없이 이어서 실행된다는 뜻
 // api 가져오는데 성공하거나 실패하거나 상관없이 마지막에 로딩을 그만하고
 // 싶을떄 그럴때 쓰면 되는 것이다
