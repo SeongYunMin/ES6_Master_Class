@@ -13,19 +13,26 @@
 // 이 아래 만든 거는 말그대로 어떻게 클라스가 구성될 것인지 보여주는 blueprint이다
 // 혼자서는 쓸 수 없다 우리는 이 클라스를 선언해줘야 한다
 class User {
-  constructor() {
-    this.username = "Nicolas";
+  constructor(name) {
+    this.username = name;
   }
   sayHello() {
-    console.log("Hi I'm Nico");
+    console.log(`Hello My name is ${this.username}`);
   }
 }
 // 아래처럼 new를 사용해 클라스를 선언해보자
 // 이렇게 선언한 sexyUser는 클라스의 instance라고 한다. 즉 살아있는 클라스 이다
 // 위에껀 죽어있는 것이다 단지 블루프린트일 뿐
 // 이렇게 instance 만든 후 출력해보면 Nicolas 출력됨을 알 수 있다
-const sexyUser = new User();
+// 인스턴스는 class 같은 청사진으로부터 만든 실체가 있는 복사본 정도로 해석가능하다
+// 더 자세한 정보는 https://gmlwjd9405.github.io/2018/09/17/class-object-instance.html
+// class의 좋은 점은 아래처럼 다양한 인자를 받을 수 있다는 것
+// class는 한마디로 오브젝트의 "공장" 이라고 할 수 있다
+const sexyUser = new User("Seong");
+const uglyUser = new User("Yun");
+console.log(sexyUser, uglyUser);
 console.log(sexyUser.username);
+console.log(uglyUser.username);
 // 클라스 안에 sayHello()라는 함수도 만들었다 이또한 실행해보자
 setTimeout(sexyUser.sayHello, 2000);
 // 이렇듯 class는 화려한 오브젝트인 것이다
