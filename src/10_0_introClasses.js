@@ -10,8 +10,8 @@
 // User라는 거를 만들었는데 그 안에는 constructor 들어간다 말그대로 user를 construct(구성)
 // 하는 애를 말한다 그 안에 this가 들어가는데 이건 좀 이따 설명한다
 // 근데 이렇게만 코드짜서 실행해보면 17번 줄에 undefined만 뜬다
-// 이 아래 만든 거는 말그대로 어떻게 클라스가 구성될 것인지 보여주는 blueprint이다
-// 혼자서는 쓸 수 없다 우리는 이 클라스를 선언해줘야 한다
+// 이 아래 만든 거는 말그대로 어떻게 객체가 구성될 것인지 보여주는 blueprint이다
+// 혼자서는 쓸 수 없다 우리는 이 객체를 선언해줘야 한다
 class User {
   constructor(name) {
     this.username = name;
@@ -30,11 +30,11 @@ class User {
 // class는 한마디로 오브젝트의 "공장" 이라고 할 수 있다
 const sexyUser = new User("Seong");
 const uglyUser = new User("Yun");
-console.log(sexyUser, uglyUser);
+const fancyUser = new User();
+console.log(sexyUser, uglyUser, fancyUser);
 console.log(sexyUser.username);
 console.log(uglyUser.username);
 // 클라스 안에 sayHello()라는 함수도 만들었다 이또한 실행해보자
 setTimeout(sexyUser.sayHello, 2000);
 // 이렇듯 class는 화려한 오브젝트인 것이다
 // instance는 수없이 많이 사용할 수 있다
-// class안에 인자를 넣는 것도 배워보자

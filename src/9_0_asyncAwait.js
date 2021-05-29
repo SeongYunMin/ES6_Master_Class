@@ -9,7 +9,7 @@
 // 기본적으로 Async와 Await은 promise 밖에서 값을 가져올 수 있는 방법이다
 // then이나 catch를 사용하지 않고 말이다
 // 우선 await은 혼자 쓰일 수 없고 항상 async function 안에서만 사용할 수 있다
-// await은 그냥 wait으로 받아들이면 된다 즉 p romise가 끝날길기다리는 것이다
+// await은 그냥 wait으로 받아들이면 된다 즉 promise가 끝날길기다리는 것이다
 // 아래는 async와 비교하기 위한 기존의 then을 활용한 promise 문이다
 const getMoviesPromise = () => {
   fetch("https://yts.mx/api/v2/list_movies.json")

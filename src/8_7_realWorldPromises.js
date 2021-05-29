@@ -18,7 +18,7 @@
 // 또 then을 써야 한다는 것이다
 // 즉 7번행처럼 response.text() 를 바로 출력해봤자 pending만 뜨므로(response.tex()는 promise니까)
 // 위처럼 then을 써서 pending 끝난 후 return값을 console.log해줘야 한다
-// 이렇게 하면 document 전체를 콘솔창에 출력할 수 있다ㅌ
+// 이렇게 하면 document 전체를 콘솔창에 출력할 수 있다
 
 // 위 코드는 아래 쓸 json을 위해 주석 처리했다 인제 영화정보를 가져오는 api를 fetch
 // 한 후 .json()함수를 통해 정보를 가져와보자
