@@ -34,7 +34,7 @@ const fancyUser = new User();
 console.log(sexyUser, uglyUser, fancyUser);
 console.log(sexyUser.username);
 console.log(uglyUser.username);
-// 클라스 안에 sayHello()라는 함수도 만들었다 이또한 실행해보자
+// 클라스 안에는 sayHello()라 함수도 만들었다 이또한 실행해보자
 setTimeout(sexyUser.sayHello, 2000);
 // 이렇듯 class는 화려한 오브젝트인 것이다
 // instance는 수없이 많이 사용할 수 있다

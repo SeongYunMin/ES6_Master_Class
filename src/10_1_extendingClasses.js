@@ -74,3 +74,4 @@ sexyAdmin.sayHello();
 // 이렇게 위처럼 extended class에 constructor 추가해버리면 sexyAdmin 선언시 에러가
 // 발생한다 그 이유는 extended에 새 constructor를 생성하는 순간 기존꺼는 사라지고
 // 얘가 메인이 되기 때문이다 따라서 JS는 이 클래스의 인자가 superAdmis 하나라고 생각한다
+// 그렇다면 만약 기존의 User 클래스의 constructor를 extend하고 싶으면 어칼까? 다음장에서 ㄱㅋ
