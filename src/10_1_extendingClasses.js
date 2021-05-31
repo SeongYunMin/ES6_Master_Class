@@ -47,7 +47,7 @@ console.log(sexyUser.password);
 // extended Class를 알아보자
 // 만약 너가 User class를 선언했는데 추후에 User class 의 특정 부분을 수정하고 싶다면?
 // 예를 들어 User 클라스를 조금 수정해서 admin(관리자) 만 건들일 수 있는 클래스를 만들고 싶다면?
-// 이때 extends가 쓰이게 된다 user라는 class에서 extend하는 것
+// 이때 extends가 쓰이게 된다 user라는 class에서 extends하는 것
 // deleteWebsite 프로퍼티가 있는 Admin 클라스를 만들어보자
 class Admin extends User {
   deleteWebsite() {
@@ -71,7 +71,7 @@ sexyAdmin.sayHello();
 //   }
 // const sexyAdmin = new Admin("Nico", "Serrano", "example@gmail.com", "123456",true);
 
-// 이렇게 위처럼 extended class에 constructor 추가해버리면 sexyAdmin 선언시 에러가
-// 발생한다 그 이유는 extended에 새 constructor를 생성하는 순간 기존꺼는 사라지고
+// 이렇게 위처 럼 extended class에 constructor 추가해버리면 sexyAdmin 선언시 에러가
+// 발생한다 그 이유는 extends에 새 constructor를 생성하는 순간 기존꺼는 사라지고
 // 얘가 메인이 되기 때문이다 따라서 JS는 이 클래스의 인자가 superAdmis 하나라고 생각한다
-// 그렇다면 만약 기존의 User 클래스의 constructor를 extend하고 싶으면 어칼까? 다음장에서 ㄱㅋ
+// 그렇다면 만약 기존의 User 클래스의 constructor를 extend하고 싶으면 어칼까? 다음장에서 ㄱㄱ

@@ -1,7 +1,7 @@
 // 만든 User 클래스를 리팩토링 해보자
 // 기존처럼 컨스트럭터에 인자 많이 넣지 않고 options 오브젝트를 인자로 넣을 것이다
 // 너가 만약 많은 인자를 쓰고 싶다면 아래처럼 오브젝트를 인자로 쓰는게 편하다
-// 아님 함수 디스트럭쳐링을 써도 된다
+// 아님 디스트럭쳐링을 써도 된다
 class User {
   constructor({ username, lastName, email, password }) {
     this.username = username;
